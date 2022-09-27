@@ -84,7 +84,7 @@ Route::middleware('auth')->group(function(){
             // Route::post('/tes',[AdminBeritaController::class, 'create'])->name('save-berita');
             Route::post('/add',[AdminBeritaController::class, 'store'])->name('simpan-berita');
             Route::get('/category/checkSlug', [CategoryBeritaController::class, 'checkSlug']);
-            Route::resource('category', CategoryBeritaController::class);
+            Route::resource('category', CategoryBeritaController::class)->except('checkSlug');
             // Route::get('/kategori/tambah',[CategoryBeritaController::class, 'create'])->name('tambah-kategori');
             // Route::post('/kategori/tambah',[CategoryBeritaController::class, 'store'])->name('simpan-kategori');
             // Route::get('/kategori/edit/{post:slug}',[CategoryBeritaController::class, 'edit'])->name('edit-kategori');

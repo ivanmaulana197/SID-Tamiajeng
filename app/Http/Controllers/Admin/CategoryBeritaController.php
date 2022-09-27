@@ -85,8 +85,9 @@ class CategoryBeritaController extends Controller
         return redirect('admin/berita');
     }
 
-    public function checkSlug(){
-        $slug = SlugService::createSlug(Category::class, 'slug', request('nama_category'));
+    public function checkSlug(Request $request){
+        
+        $slug = SlugService::createSlug(Category::class, 'slug', $request->input('nama_category'));
         return response()->json(['slug'=>$slug]);
     }
 }

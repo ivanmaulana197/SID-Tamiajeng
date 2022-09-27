@@ -30,7 +30,7 @@
                 <div class="row mb-3">
                     <label class="col-sm-2 col-form-label" for="nama_category">Nama Kategori</label>
                     <div class="col-sm-10">
-                        <input class="form-control" id="nama_category" name="nama_category" type="text" />
+                        <input class="form-control" id="nama_category" name="nama_category" type="text" required/>
                     </div>
                 </div>
                 <div class="row mb-3">
@@ -60,9 +60,8 @@
 {{-- Check Slug --}}
 <script>
     $('#nama_category').change(function(e) {
-       $.get('admin/berita/category/checkSlug', 
-       { 'nama_category': $(this).val() }, 
-       function( data ) {
+        console.log($(this).val());
+        $.get('checkSlug', { 'nama_category': $(this).val() },function( data ) {
            $('#slug').val(data.slug);
        }
        );
