@@ -9,7 +9,7 @@
     {{-- logo mode hp --}}
     <a class="navbar-brand me-1 me-sm-3" href="/">
         <div class="d-flex align-items-center">
-            <img class="me-2" src="https://tamiajeng.my.id/desa/logo/Desain__sid__fFcxJnC.png" alt="" width="40" />
+            <img class="me-2" src="{{ asset('img/logo.png') }}" alt="" width="40" />
             <span class="font-sans-serif" style="font-size: 16px">Desa Tamiajeng</span>
         </div>
     </a>
@@ -70,7 +70,7 @@
         <li class="nav-item dropdown"><a class="nav-link pe-0" id="navbarDropdownUser" href="#" role="button"
                 data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <div class="avatar avatar-xl">
-                    <img class="rounded-circle" src="../../../assets/img/team/3-thumb.png" alt="" />
+                    <img class="rounded-circle" src="{{ asset('img/profile.png') }}" alt="" />
 
                 </div>
             </a>

@@ -11,6 +11,9 @@ class AuthController extends Controller
 {
 
     public function register(){
+        if(Auth::check()){
+            return redirect()->back();
+        }
         return view('auth.register');
     }
 
@@ -31,6 +34,9 @@ class AuthController extends Controller
     }
 
     public function login(){
+        if(Auth::check()){
+            return redirect()->back();
+        }
         return view('auth.login');
     }
 
@@ -41,12 +47,14 @@ class AuthController extends Controller
             'password' => 'required'
         ]);
 
+        // dd(Auth::spy());
+
         if(Auth::attempt($credentials)){
             $request->session()->regenerate();
             return redirect()->intended('/admin');
+        }else{
+            return back()->with('loginError', 'Login gagal!');
         }
-
-        return back()->with('loginError', 'Login gagal!');
     }
 
     public function logout(Request $request){

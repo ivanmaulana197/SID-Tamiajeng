@@ -11,7 +11,7 @@ use Illuminate\Http\Request;
 class BeritaController extends Controller
 {
     public function index(){
-        $posts = Post::latest()->paginate(8);
+        $posts = Post::where('status', 'Published')->latest()->paginate(8);
         $identitas = IdentitasDesa::find(1);
         $pemerintahan = PemerintahDesa::find(1);
         $aparaturs = AparaturDesa::all();

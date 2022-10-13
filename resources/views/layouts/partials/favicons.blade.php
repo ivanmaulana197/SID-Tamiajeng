@@ -1,5 +1,5 @@
 <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('/assets/img/favicons/apple-touch-icon.png') }}" />
-<link rel="icon" type="image/png" sizes="32x32" href="https://tamiajeng.desa.id/desa/logo/Desain__sid__fFcxJnC.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="{{ asset('img/logo.png') }}" />
 {{-- <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('/assets/img/favicons/favicon-16x16.png') }}" /> --}}
 {{-- <link rel="shortcut icon" type="image/x-icon" href="{{ asset('/assets/img/favicons/favicon.ico') }}" /> --}}
 <link rel="manifest" href="{{ asset('/assets/img/favicons/manifest.json') }}" />

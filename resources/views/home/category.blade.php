@@ -8,7 +8,7 @@
                 <a href="#" class="text-1000 ">
                     <div class="card bg-400">
                         <div class="card-body pb-1 pt-1" style="position: relative;text-align: center;">
-                            <img src="https://tamiajeng.my.id/desa/themes/batuah_22_4_1/linkplus/icon/buku_tamu.png" class="img-fluid fit-cover rounded-1 absolute-sm-centered pb-2" style="max-width: 50px" alt="">
+                            <img src="{{ asset('img/buku-tamu.png') }}" class="img-fluid fit-cover rounded-1 absolute-sm-centered pb-2" style="max-width: 50px" alt="">
                             <span class="fw-semi-bold" style="font-size: 12px;position: relative; display: flex;justify-content: center">Buku Tamu</span>
                         </div>
                     </div>
@@ -18,17 +18,17 @@
                 <a href="{{ route('proyek-desa-home') }}" class="text-1000 ">
                     <div class="card bg-400">
                         <div class="card-body pb-1 pt-1" style="position: relative;text-align: center;">
-                            <img src="https://tamiajeng.my.id/desa/themes/batuah_22_4_1/linkplus/icon/pembangunan.png" class="img-fluid fit-cover rounded-1 absolute-sm-centered pb-2" style="max-width: 50px" alt="">
+                            <img src="{{ asset('img/pembangunan.png') }}" class="img-fluid fit-cover rounded-1 absolute-sm-centered pb-2" style="max-width: 50px" alt="">
                             <span class="fw-semi-bold" style="font-size: 12px;position: relative; display: flex;justify-content: center">Pembangunan</span>
                         </div>
                     </div>
                 </a>
             </div>
             <div class="col-6 col-sm-4 col-lg-3 mt-2">
-                <a href="{{ route('pengaduan') }}" class="text-1000 ">
+                <a href="{{ route('pengaduan-home') }}" class="text-1000 "> 
                     <div class="card bg-400">
                         <div class="card-body pb-1 pt-1" style="position: relative;text-align: center;">
-                            <img src="https://tamiajeng.my.id/desa/themes/batuah_22_4_1/linkplus/icon/pengaduan.png" class="img-fluid fit-cover rounded-1 absolute-sm-centered pb-2" style="max-width: 50px" alt="">
+                            <img src="{{ asset('img/pengaduan.png') }}" class="img-fluid fit-cover rounded-1 absolute-sm-centered pb-2" style="max-width: 50px" alt="">
                             <span class="fw-semi-bold" style="font-size: 12px;position: relative; display: flex;justify-content: center">Pengaduan</span>
                         </div>
                     </div>
@@ -38,7 +38,7 @@
                 <a href="{{ route('lapak-desa-home') }}" class="text-1000 ">
                     <div class="card bg-400">
                         <div class="card-body pb-1 pt-1" style="position: relative;text-align: center;">
-                            <img src="https://tamiajeng.my.id/desa/themes/batuah_22_4_1/linkplus/icon/lapak.png" class="img-fluid fit-cover rounded-1 absolute-sm-centered pb-2" style="max-width: 50px" alt="">
+                            <img src="{{ asset('img/lapak.png') }}" class="img-fluid fit-cover rounded-1 absolute-sm-centered pb-2" style="max-width: 50px" alt="">
                             <span class="fw-semi-bold" style="font-size: 12px;position: relative; display: flex;justify-content: center">Lapak Desa</span>
                         </div>
                     </div>

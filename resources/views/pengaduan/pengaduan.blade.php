@@ -20,12 +20,12 @@
                 @csrf
                 <div class="mb-3">
                     <label class="form-label" for="nama">Nama</label>
-                    <input class="form-control" id="nama" type="text" name="nama" placeholder="Input Nama" />
+                    <input class="form-control" id="nama" type="text" name="nama" placeholder="Input Nama" required/>
                 </div>
                 <div class="mb-3">
                     <label class="form-label" for="pengaduan">Pengaduan</label>
                     <textarea class="form-control" id="pengaduan" name="pengaduan" rows="3"
-                        placeholder="Input pengaduan anda"></textarea>
+                        placeholder="Input pengaduan anda" required></textarea>
                 </div>
                 <button class="btn btn-primary" type="submit"> Kirim</button>
             </form>

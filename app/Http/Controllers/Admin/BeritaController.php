@@ -29,6 +29,7 @@ class BeritaController extends Controller
     public function index()
     {
         $posts = Post::all();
+        
         $categories = Category::all();
         return view('admin.berita.berita',[
             'posts' =>$posts,
@@ -96,7 +97,7 @@ class BeritaController extends Controller
             'title' => 'required|unique:posts|max:255',
             'body' => 'required',
             'category_id' => 'required',
-            // 'gambar' => 'image|mimes:jpeg,png,jpg,gif,svg',
+            'gambar' => 'image|mimes:jpeg,png,jpg,gif,svg',
             'status' => 'required',
         ]);
         $profile = Post::where('category_id', 1)->first();
@@ -139,6 +140,7 @@ class BeritaController extends Controller
         ]);
 
         if($request->has('gambar')){
+           
             foreach($request->file('gambar') as $gambar){
                 // $file_name = time().'.'.$gambar->getClientOriginalName();
                 // $gambar->storeAs('thumbnail', $file_name);
@@ -151,7 +153,7 @@ class BeritaController extends Controller
         }else{
             MultipleImage::create([
                 'post_id' => $data->id,
-                'path' => 'https://tamiajeng.my.id/desa/themes/batuah_22_4_2/images/pengganti.jpg',
+                'path' => asset('img/no-img.jpg'),
             ]);
         }
         return redirect(route('berita'));

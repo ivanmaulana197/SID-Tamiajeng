@@ -65,8 +65,9 @@
                     <label class="col-sm-2 col-form-label" for="gambar">Gambar berita</label>
                     <div class="col-md-10">
                         <div class="mb-3">
-                            <input class="form-control" id="gambar" name="gambar[]" type="file" multiple='multiple'
+                            <input class="form-control @error('gambar') is-invalid @enderror" id="gambar" name="gambar[]" type="file" multiple='multiple'
                                 onchange="previewImage()" />
+                            <small class="text-danger">@error('gambar') {{$message}} @enderror</small>
                         </div>
                     </div>
                     <label class="col-sm-2 col-form-label" for="preview">Preview gambar</label>
@@ -109,8 +110,6 @@
                 </div>
 
                 <script>
-                    
-
                     function previewImage(){
                         const image = document.querySelector('#gambar');
                         const imgPreview = document.querySelector('.preview-img');
@@ -155,31 +154,28 @@
                         // imgPreview.innerHTML += '<button class="carousel-control-prev" type="button" data-bs-target="#controlStyledExample" data-bs-slide="prev"> <span class="fas fa-angle-left"></span> <span class="sr-only">Previous</span> </button> <button class="carousel-control-next" type="button" data-bs-target="#controlStyledExample" data-bs-slide="next"> <span class="fas fa-angle-right"></span><span class="sr-only">Next</span> </button>';
                         
                     }
-
-
                 </script>
 
                 <div class="row mb-3">
                     <label class="col-sm-2 col-form-label" for="body">Isi Berita</label>
                     <div class="col-md-10">
                         <div class="min-vh-50">
-                            <textarea id="body" class="form-control tinymce" name="body"></textarea>
+                            <textarea id="body @error('body') is-invalid @enderror" class="form-control tinymce" name="body">{{ old('body')}}</textarea>
+                            <small class="text-danger">@error('body') {{$message}} @enderror</small>
                         </div>
                     </div>
                 </div>
                 
                 <div class="row mb-3">
-                    <label class="col-sm-2 col-form-label" for="status">Inputkan poster anda</label>
+                    <label class="col-sm-2 col-form-label" for="status">Status</label>
                     <div class="col-md-6">
-                        <div class="min-vh-50">
+                        
                             <select class="form-select form-control @error('status') is-invalid @enderror" name="status"
                                 data-style="btn-outline-primary" data-size="5">
                                 <option>Draft</option>
                                 <option>Published</option>
                             </select>
                             <small class="text-danger">@error('status') {{$message}} @enderror</small>
-
-                        </div>
                     </div>
                 </div>
 

@@ -36,17 +36,18 @@
                     @foreach ($categories as $category)
                     <tr>
                         <td>{{ $category->nama_category }}</td>
-
                         <td>
                             <a href="{{route('category.edit', $category->slug)}}"
                                 class="badge bg-warning text-decoration-none"><span class="bi bi-pencil"></span>
                                 Edit</a>
+                            @if ($category->id > 4)
                             <form action="{{ route('category.destroy', [$category->slug]) }}" method="POST"
                                 class="d-inline">
                                 @method('delete')
                                 @csrf
                                 <button class="badge bg-danger"><span class="bi bi-trash"></span> Delete</button>
                             </form>
+                            @endif
                         </td>
                     </tr>
                     @endforeach
@@ -91,11 +92,13 @@
                                 <i class="bi bi-eye"></i> Detail</a>
                             <a href="berita/edit/{{ $post->slug }}" class="badge badge-soft-warning">
                                 <i class="bi bi-pencil"></i>Edit</a>
+                            @if($post->category_id > 4)
                             <form action="{{ route('hapus-berita', [$post->slug]) }}" method="POST" class="d-inline">
                                 @method('delete')
                                 @csrf
                                 <button class="badge bg-danger"><span class="bi bi-trash"></span> Delete</button>
                             </form>
+                            @endif
                             {{-- <form action="#" method="POST">
                                 @method('delete')
                                 @csrf

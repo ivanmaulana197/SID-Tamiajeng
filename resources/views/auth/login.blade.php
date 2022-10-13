@@ -31,9 +31,7 @@
     <!--    Stylesheets-->
     <!-- ===============================================-->
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link
-        href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,500,600,700%7cPoppins:300,400,500,600,700,800,900&amp;display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,500,600,700%7cPoppins:300,400,500,600,700,800,900&amp;display=swap" rel="stylesheet">
     <link href="{{ asset('vendors/overlayscrollbars/OverlayScrollbars.min.css') }}" rel="stylesheet">
     <link href="{{ asset('assets/css/theme-rtl.min.css') }}" rel="stylesheet" id="style-rtl">
     <link href="{{ asset('assets/css/theme.min.css') }}" rel="stylesheet" id="style-default">
@@ -51,34 +49,31 @@
     <main class="main" id="top">
         <div class="container-fluid" data-layout="container">
             {{-- script isFluid --}}
-            
+
 
             @if (session()->has('success'))
-            <div class="alert alert-success border-2 d-flex align-items-center" role="alert">
-                <div class="bg-success me-3 icon-item"><span class="fas fa-check-circle text-white fs-3"></span></div>
-                <p class="mb-0 flex-1">{{ session('success') }}</p>
-                <button class="btn-close" type="button" data-bs-dismiss="alert" aria-label="Close"></button>
-              </div>
-            </div>
+                <div class="alert alert-success border-2 d-flex align-items-center" role="alert">
+                    <div class="bg-success me-3 icon-item"><span class="fas fa-check-circle text-white fs-3"></span></div>
+                    <p class="mb-0 flex-1">{{ session('success') }}</p>
+                    <button class="btn-close" type="button" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
             @endif
-            @if (session()->has('loginError'))
-            <div class="alert alert-danger border-2 d-flex align-items-center" role="alert">
-                <div class="bg-danger me-3 icon-item"><span class="fas fa-times-circle text-white fs-3"></span></div>
-                <p class="mb-0 flex-1"> {{ session('loginError') }}</p>
-                <button class="btn-close" type="button" data-bs-dismiss="alert" aria-label="Close"></button>
-            </div>
-            @endif
+
 
             <div class="row flex-center min-vh-100 py-6">
                 <div class="col-sm-10 col-md-8 col-lg-6 col-xl-5 col-xxl-4">
-
+                    @if (session()->has('loginError'))
+                        <div class="alert alert-danger border-2 d-flex align-items-center" role="alert">
+                            <div class="bg-danger me-3 icon-item"><span class="fas fa-times-circle text-white fs-3"></span></div>
+                            <p class="mb-0 flex-1"> {{ session('loginError') }}</p>
+                            <button class="btn-close" type="button" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>
+                    @endif
                     <div class="card">
                         <div class="card-body p-4 p-sm-5">
                             <div class="row flex-between-center mb-2">
                                 <a class="d-flex flex-center mb-4" href="/">
-                                    <img class="me-2"
-                                        src="https://tamiajeng.my.id/desa/logo/Desain__sid__fFcxJnC.png" alt=""
-                                        width="58" />
+                                    <img class="me-2" src="{{ asset('/img/logo.png') }}" alt="" width="58" />
                                     <span class="font-sans-serif fw-bolder fs-5 d-inline-block">Desa Tamiajeng</span>
                                 </a>
                             </div>
@@ -90,19 +85,16 @@
                             <form action="/login" method="POST">
                                 @csrf
                                 <div class="mb-3">
-                                    <input class="form-control @error('username') is-invalid @enderror" type="user"
-                                        name="username" placeholder="Username" autofocus required
-                                        value="{{ old('username') }}" />
+                                    <input class="form-control @error('username') is-invalid @enderror" type="user" name="username" placeholder="Username" autofocus required value="{{ old('username') }}" />
 
                                     @error('username')
-                                    <div class="invalid-feedback">
-                                        {{ $message }}
-                                    </div>
+                                        <div class="invalid-feedback">
+                                            {{ $message }}
+                                        </div>
                                     @enderror
                                 </div>
                                 <div class="mb-3">
-                                    <input class="form-control" type="password" name="password" placeholder="Password"
-                                        required />
+                                    <input class="form-control" type="password" name="password" placeholder="Password" required />
                                 </div>
 
                                 <div class="mb-3">
