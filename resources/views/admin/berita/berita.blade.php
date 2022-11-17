@@ -3,6 +3,12 @@
 @section('content')
 
 <div class="row g-3">
+    @if ($message = Session::get('success'))
+    <div class="alert alert-success alert-block">
+        <button type="button" class="close" data-dismiss="alert">×</button>
+        <strong>{{ $message }}</strong>
+    </div>
+    @endif 
     <div class="card">
         <div class="card-body">
             <nav style="--falcon-breadcrumb-divider: '»';" aria-label="breadcrumb">

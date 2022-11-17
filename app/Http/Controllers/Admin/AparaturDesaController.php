@@ -42,7 +42,7 @@ class AparaturDesaController extends Controller
         $validated = $request->validate([
             'nama' => 'required',
             'jabatan' => 'required',
-            'gambar' => 'image|mimes:jpeg,png,jpg,gif,svg',
+            'gambar' => 'required|image|mimes:jpeg,png,jpg,gif,svg',
         ]);
         $image = CloudinaryStorage::upload($request->gambar->getRealPath(), $request->gambar->getClientOriginalName());
         // $imageName = time().'.'.$request->gambar->extension(); 
@@ -54,8 +54,7 @@ class AparaturDesaController extends Controller
             'gambar' => $image
         ]);
 
-        return back()
-            ->with('success','Aparatur berhasil ditambahkan.');
+        return redirect()->route('aparatur.index')->with('success','Aparatur berhasil ditambahkan.');
 
     }
 

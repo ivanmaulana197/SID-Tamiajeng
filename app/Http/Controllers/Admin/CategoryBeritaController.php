@@ -33,7 +33,7 @@ class CategoryBeritaController extends Controller
     public function store(Request $request)
     {
         Category::create($request->all());
-         return redirect(route('berita'));
+         return redirect(route('berita'))->with('success','Category Berita Desa berhasil ditambahkan');
     }
 
     /**

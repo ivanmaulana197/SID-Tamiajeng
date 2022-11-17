@@ -86,7 +86,6 @@
                                 @csrf
                                 <div class="mb-3">
                                     <input class="form-control @error('username') is-invalid @enderror" type="user" name="username" placeholder="Username" autofocus required value="{{ old('username') }}" />
-
                                     @error('username')
                                         <div class="invalid-feedback">
                                             {{ $message }}

@@ -156,7 +156,7 @@ class BeritaController extends Controller
                 'path' => asset('img/no-img.jpg'),
             ]);
         }
-        return redirect(route('berita'));
+        return redirect(route('berita'))->with('success','Berita Desa berhasil ditambahkan');
         
     }
 

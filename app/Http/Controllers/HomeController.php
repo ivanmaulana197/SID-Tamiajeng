@@ -49,7 +49,7 @@ class HomeController extends Controller
             'pengaduan' => $request->pengaduan,
 
         ]);
-        return back()->with('success', 'Pengaduan Berhasil dikirim');
+        return redirect()->route('pengaduan-home')->with('success', 'Pengaduan Berhasil dikirim');
     }
     
     public function aparatur(){
