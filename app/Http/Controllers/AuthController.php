@@ -48,15 +48,19 @@ class AuthController extends Controller
             'username' => 'required',
             'password' => 'required'
         ]);
-
+        $user = User::where('username',$request->username)->first();
         // dd(Auth::spy());
-
-        if(Auth::attempt($credentials)){
-            $request->session()->regenerate();
-            return redirect()->intended('/admin');
+        if($user){
+            if(Auth::attempt($credentials)){
+                $request->session()->regenerate();
+                return redirect()->intended('/admin');
+            }else{
+                return back()->with('loginError', 'Login gagal, password salah!');
+            }
         }else{
-            return back()->with('loginError', 'Login gagal!');
+            return back()->with('loginError', 'Login gagal, username salah!');
         }
+       
     }
 
     public function logout(Request $request){

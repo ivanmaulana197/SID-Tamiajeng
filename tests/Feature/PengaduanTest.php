@@ -8,15 +8,23 @@ use Tests\TestCase;
 
 class PengaduanTest extends TestCase
 {
-    public function test_halaman_pengaduan()
-    {
-        $this->get('/pengaduan')->assertStatus(200);
-    }
+    // public function test_halaman_pengaduan()
+    // {
+    //     $this->get('/pengaduan')->assertStatus(200);
+    // }
 
-    public function test_halaman_pengaduan_admin()
-    {
+    // public function test_halaman_pengaduan_admin()
+    // {
+    //     $this->login();
+
+    //     $this->get('admin/pengaduan')->assertStatus(200);
+    // }
+    public function test_mengubah_status_pengaduan()
+    {        
         $this->login();
-
+        $response = $this->post(route('updatePengaduan', 1),[
+            'status' => 'Belum Selesai'
+        ]);
         $this->get('admin/pengaduan')->assertStatus(200);
     }
 

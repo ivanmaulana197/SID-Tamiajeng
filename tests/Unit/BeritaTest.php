@@ -22,6 +22,10 @@ class BeritaTest extends TestCase
         $this->login();
         $response = $this->get('/admin/berita')->assertStatus(200);
     }
+    public function test_route_berita_admin_tidak_dapat_diakses_user()
+    {
+        $response = $this->get('/admin/berita')->assertStatus(302);
+    }
 
     public function test_tambah_category_berita()
     {

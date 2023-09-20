@@ -60,7 +60,7 @@
 			<tbody>
 				<tr><td>Nama Kegiatan</td><td>:</td><td>{{ $proyekDesa->namaKegiatan }}</td></tr>
 				<tr><td>Lokasi</td><td>:</td><td>{{ $proyekDesa->lokasi }}</td></tr>
-				<tr><td>Anggaran</td><td>:</td><td>Rp. {{ number_format($proyekDesa->anggaran,2,',','.'); }}</td></tr>
+				<tr><td>Anggaran</td><td>:</td><td>Rp. {{ number_format($proyekDesa->anggaran,2,',','.') }}</td></tr>
 				<tr><td>Volume</td><td>:</td><td>{{ $proyekDesa->volume }} m2</td></tr>
 				<tr><td>Sumber Dana</td><td>:</td><td>{{ $proyekDesa->sumberDana }}</td></tr>
 				<tr><td>Tahun</td><td>:</td><td>{{ $proyekDesa->tahun }}</td></tr>
